@@ -8,7 +8,7 @@ import copy
 import numpy
 import matplotlib.pyplot as plot
 import matplotlib.animation as animation
-from Neuron import *
+from src.Neuron import *
 import tkinter as tk
 import time
 

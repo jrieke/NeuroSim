@@ -17,8 +17,8 @@ Jahr / Stevens (1990): Voltage  Dependence  of  NMDA-Activated  Macroscopic  Con
 '''
 
 import numpy
-import Solver
-from Alphabets import greek
+import src.Solver as Solver
+from src.Alphabets import greek
 
 
 ''' Global calculations and conversions '''
