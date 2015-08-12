@@ -115,7 +115,7 @@ picked_neuron_description.set(picked_neuron_description_default)
 tk.Label(master, textvariable=picked_neuron_description).pack()
 
 picked_element_description = tk.StringVar()
-picked_element_description_default = 'Space: Pause\nUp/Down: Change speed\nS: Single Step\nC: Current injection\n(into picked segment)\nLeft/Right: Pick next segment'
+picked_element_description_default = 'Space: Pause\nUp/Down: Change speed\nT: Single Step\nC: Current injection\n(into picked segment)\nLeft/Right: Pick next segment'
 picked_element_description.set(picked_element_description_default)
 tk.Label(master, textvariable=picked_element_description).pack()
 
@@ -223,28 +223,30 @@ def onKeyPressed(event):
     global paused
     global timeStepsBetweenPlots
     global picked_segment
+
+    print('key pressed', event.key)
     
-    if event.key == 'alt+ ':
+    if event.key == ' ':
         paused = not paused
-    elif event.key == 'alt+_s' and paused:
+    elif event.key == 't' and paused:
         paused = False
         singleStep(0)
         paused = True
-    elif event.key == 'alt+right' and picked_element:
+    elif event.key == 'right' and picked_element:
         removeCurrent()
         picked_segment = max(0, min(picked_segment + 1, picked_element.num_segments-1))
         updatePickedElementDescription()
-    elif event.key == 'alt+left' and picked_element:
+    elif event.key == 'left' and picked_element:
         removeCurrent()
         picked_segment = max(0, min(picked_segment - 1, picked_element.num_segments-1))
         updatePickedElementDescription()
-    elif event.key == 'alt+up':
+    elif event.key == 'up':
         timeStepsBetweenPlots += 1
         update_speed_text()
-    elif event.key == 'alt+down':
+    elif event.key == 'down':
         timeStepsBetweenPlots = max(1, timeStepsBetweenPlots-1)
         update_speed_text()
-    elif event.key == 'alt+c':
+    elif event.key == 'c':
         insertCurrent()
         
 def onKeyRealeased(event):

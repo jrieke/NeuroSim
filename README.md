@@ -7,7 +7,7 @@ Implements Hodgkin-Huxley equations (<a href="http://www.ncbi.nlm.nih.gov/pmc/ar
 Supports Euler's and Heun's algorithms as differential equation solvers.<br>
 Visualizes the potentials in an animated matplotlib graph and allows direct user interaction (e. g. insert current, show segment parameters).
 <br><br>
-Run src/simulation.py to start. Requries Python 3.3, NumPy and matplotlib. 
+Run src/simulation.py to start. Requries Python 3.3, NumPy and matplotlib. Published under the MIT License.
 <br><hr>
 User interface with voltage graph and data browser:<br><br>
 <img src="/gui.png">
